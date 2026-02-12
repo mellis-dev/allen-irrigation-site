@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+<BaseLayout title="Irrigation Services" description="Professional irrigation system installation and service using Rain Bird commercial products in central Indiana.">
+  <Hero
+    title="Irrigation Services"
+    subtitle="Commercial grade irrigation systems built to last"
+    image="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="section-title">Professional Irrigation Installation</h2>
+          <p class="text-gray-600 text-lg mb-6">With a proven record of installation experience, Allen Irrigation delivers irrigation systems that keep your lawn and landscape healthy and green all season long.</p>
+          <p class="text-gray-600 text-lg mb-6">We exclusively use Rain Bird commercial products and PVC piping — the same quality you'd find on a professional golf course. Our systems are designed for longevity, efficiency, and complete coverage.</p>
+          <p class="text-gray-600 text-lg">Every project begins with an in-person meeting to assess your property and discuss your needs. We believe in transparent pricing with no surprises — what we quote is what you pay.</p>
+        </div>
+        <div class="bg-cover bg-center rounded-lg h-96" style="background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80')"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-title">What Sets Us Apart</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+        {[
+          { icon: '🌧️', title: 'Rain Bird Products', desc: 'Industry-leading commercial grade equipment on every installation.' },
+          { icon: '🔧', title: 'PVC Piping', desc: 'Durable PVC piping that outlasts poly pipe alternatives.' },
+          { icon: '📐', title: 'Head-to-Head Coverage', desc: 'Our guarantee ensures even watering across your entire property.' },
+          { icon: '💰', title: 'Transparent Pricing', desc: 'In-person meetings and honest quotes with no surprises.' },
+        ].map(item => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <span class="text-4xl mb-4 block">{item.icon}</span>
+            <h3 class="font-heading font-bold text-lg text-green-dark mb-2">{item.title}</h3>
+            <p class="text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Ready for a Greener Lawn?" subtitle="Schedule your free irrigation consultation today." />
+</BaseLayout>

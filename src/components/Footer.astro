@@ -1,0 +1,52 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="bg-green-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Company -->
+      <div>
+        <h3 class="font-heading font-bold text-xl mb-4">Allen Irrigation Company</h3>
+        <p class="text-green-accent/80 mb-4">Professional irrigation, landscape lighting, and holiday lighting services serving central Indiana since 2001.</p>
+        <p class="text-sm text-white/60">Licensed & Insured</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="font-heading font-bold text-xl mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="/about" class="text-white/80 hover:text-green-accent transition-colors">About Us</a></li>
+          <li><a href="/services" class="text-white/80 hover:text-green-accent transition-colors">Services</a></li>
+          <li><a href="/services/irrigation" class="text-white/80 hover:text-green-accent transition-colors">Irrigation</a></li>
+          <li><a href="/services/landscape-lighting" class="text-white/80 hover:text-green-accent transition-colors">Landscape Lighting</a></li>
+          <li><a href="/services/holiday-lighting" class="text-white/80 hover:text-green-accent transition-colors">Holiday Lighting</a></li>
+          <li><a href="/contact" class="text-white/80 hover:text-green-accent transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Hours -->
+      <div>
+        <h3 class="font-heading font-bold text-xl mb-4">Working Hours</h3>
+        <ul class="space-y-2 text-white/80">
+          <li class="flex justify-between"><span>Monday</span><span>7:30 AM – 3:30 PM</span></li>
+          <li class="flex justify-between"><span>Tuesday</span><span>7:30 AM – 3:00 PM</span></li>
+          <li class="flex justify-between"><span>Wednesday</span><span>8:00 AM – 3:00 PM</span></li>
+          <li class="flex justify-between"><span>Thursday</span><span>8:00 AM – 3:00 PM</span></li>
+          <li class="flex justify-between"><span>Friday</span><span>8:00 AM – 3:00 PM</span></li>
+          <li class="flex justify-between"><span>Sat – Sun</span><span class="text-green-accent">Closed</span></li>
+        </ul>
+        <div class="mt-6">
+          <p class="text-white/80">Mooresville, Indiana</p>
+          <p class="text-white/80">Serving Central Indiana</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-white/50">
+      <p>&copy; {year} Allen Irrigation Company. All rights reserved.</p>
+      <p class="mt-2 md:mt-0">Mooresville, Indiana | Serving Central Indiana Since 2001</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+<BaseLayout title="Landscape Lighting" description="Professional landscape lighting design and installation for security and beauty in central Indiana.">
+  <Hero
+    title="Landscape Lighting"
+    subtitle="Security, beauty, and artistic flair for your property"
+    image="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="bg-cover bg-center rounded-lg h-96" style="background-image: url('https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&q=80')"></div>
+        <div>
+          <h2 class="section-title">Illuminate Your Property</h2>
+          <p class="text-gray-600 text-lg mb-6">Our landscape lighting designs combine security, beauty, and artistic flair to transform your property after dark. We focus on balance and symmetry to create a cohesive, stunning nighttime presentation.</p>
+          <p class="text-gray-600 text-lg mb-6">Strategic placement enhances safety by illuminating walkways, steps, and entry points, while also highlighting your home's best architectural features and landscaping.</p>
+          <p class="text-gray-600 text-lg">We consider your nighttime activities, accessibility needs, and overall aesthetic goals to create a lighting plan that's both functional and beautiful.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-title">Lighting Benefits</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        {[
+          { icon: '🔒', title: 'Security', desc: 'Well-lit properties deter intruders and make you feel safe at home.' },
+          { icon: '🎨', title: 'Beauty & Artistry', desc: 'Highlight your home\'s architecture and landscape with artistic flair.' },
+          { icon: '🚶', title: 'Safety & Accessibility', desc: 'Illuminate walkways, steps, and entry points for safe navigation.' },
+        ].map(item => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <span class="text-4xl mb-4 block">{item.icon}</span>
+            <h3 class="font-heading font-bold text-lg text-green-dark mb-2">{item.title}</h3>
+            <p class="text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Light Up Your Landscape" subtitle="Contact us for a free landscape lighting consultation." />
+</BaseLayout>

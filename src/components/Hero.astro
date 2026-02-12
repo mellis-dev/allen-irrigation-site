@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  cta?: { text: string; href: string };
+  image?: string;
+  overlay?: boolean;
+  compact?: boolean;
+}
+
+const { title, subtitle, cta, image = 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80', overlay = true, compact = false } = Astro.props;
+---
+<section
+  class={`relative bg-cover bg-center bg-no-repeat ${compact ? 'py-24' : 'py-32 md:py-48'}`}
+  style={`background-image: url('${image}')`}
+>
+  {overlay && <div class="absolute inset-0 bg-green-dark/70"></div>}
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+    <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">{title}</h1>
+    {subtitle && <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-white/90">{subtitle}</p>}
+    {cta && <a href={cta.href} class="btn-primary">{cta.text}</a>}
+  </div>
+</section>

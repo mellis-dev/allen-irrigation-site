@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const testimonials = [
+  { name: 'Sarah M.', location: 'Mooresville, IN', text: 'Allen Irrigation transformed our yard with a beautiful sprinkler system. Professional from start to finish, and the pricing was exactly what they quoted. No surprises!', service: 'Irrigation' },
+  { name: 'David & Lisa K.', location: 'Bargersville, IN', text: "We've used AIC for both irrigation and landscape lighting. The attention to detail is incredible. Our home looks amazing at night, and the lawn has never been greener.", service: 'Irrigation & Lighting' },
+  { name: 'Mark T.', location: 'Greenwood, IN', text: 'The holiday lighting service was a game changer for our family. They handled everything — installation, takedown, storage. We just enjoyed the season.', service: 'Holiday Lighting' },
+  { name: 'Jennifer R.', location: 'Plainfield, IN', text: "Nic and his team are the real deal. Commercial grade products, honest pricing, and they stand behind their work. Highly recommend to anyone in central Indiana.", service: 'Irrigation' },
+  { name: 'Tom & Susan B.', location: 'Mooresville, IN', text: "We've been customers for over 10 years. The system they installed still works perfectly, and anytime we need service, they're prompt and professional.", service: 'Irrigation' },
+  { name: 'Amanda P.', location: 'Brownsburg, IN', text: 'The landscape lighting they designed for our home is absolutely stunning. Friends and neighbors constantly compliment how beautiful it looks at night.', service: 'Landscape Lighting' },
+];
+const stars = '★★★★★';
+---
+<BaseLayout title="Testimonials" description="Read what central Indiana homeowners say about Allen Irrigation Company.">
+  <Hero
+    title="Client Testimonials"
+    subtitle="Hear from homeowners across central Indiana"
+    image="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Our best advertising comes from the homeowners and businesses we serve.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {testimonials.map(t => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="text-green-accent text-xl mb-3">{stars}</div>
+            <p class="text-gray-600 italic mb-4">"{t.text}"</p>
+            <div class="border-t pt-4">
+              <div class="font-heading font-semibold text-green-dark">{t.name}</div>
+              <div class="text-sm text-gray-500">{t.location}</div>
+              <span class="inline-block mt-2 text-xs font-semibold bg-green-accent/10 text-green-mid px-3 py-1 rounded-full">{t.service}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Ready to Become Our Next Happy Customer?" subtitle="Contact us for a free consultation and see why central Indiana trusts Allen Irrigation." />
+</BaseLayout>

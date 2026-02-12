@@ -1,0 +1,25 @@
+---
+const reasons = [
+  { icon: '🎯', title: 'Specialized Company', desc: 'We focus exclusively on irrigation and lighting — it\'s all we do, and we do it best.' },
+  { icon: '🛡️', title: 'Licensed & Insured', desc: 'Full licensing and insurance for your peace of mind on every project.' },
+  { icon: '⏰', title: 'Dependable Services', desc: 'Timely, responsive, and reliable — we show up when we say we will.' },
+  { icon: '📅', title: 'Day Scheduling', desc: 'Convenient daytime scheduling that works around your life.' },
+  { icon: '💬', title: 'Free Consultations', desc: 'In-person meetings with no surprises on pricing. Ever.' },
+  { icon: '🏆', title: '20+ Years Reputable', desc: 'Trusted by central Indiana homeowners and businesses since 2001.' },
+];
+---
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="section-title">Why Choose Allen Irrigation?</h2>
+    <p class="section-subtitle">Experience the difference that comes with over two decades of dedicated service.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {reasons.map(r => (
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <span class="text-4xl mb-4 block">{r.icon}</span>
+          <h3 class="font-heading font-bold text-lg text-green-dark mb-2">{r.title}</h3>
+          <p class="text-gray-600">{r.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

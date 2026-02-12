@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Stats from '../components/Stats.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+<BaseLayout title="Home">
+  <Hero
+    title="Central Indiana's Trusted Irrigation & Lighting Experts"
+    subtitle="Professional irrigation systems, landscape lighting, and holiday lighting installation — serving Mooresville and central Indiana since 2001."
+    cta={{ text: 'Get a Free Consultation', href: '/contact' }}
+    image="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80"
+  />
+
+  <Stats />
+
+  <!-- Services Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">From irrigation systems to stunning lighting displays, we have the expertise to enhance your property.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ServiceCard
+          title="Irrigation Systems"
+          description="Rain Bird commercial products, PVC piping, and head-to-head coverage guarantee. No surprises on pricing."
+          icon="💧"
+          href="/services/irrigation"
+          image="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80"
+        />
+        <ServiceCard
+          title="Landscape Lighting"
+          description="Security, beauty, and artistic flair. Strategic placement for safety and stunning nighttime curb appeal."
+          icon="💡"
+          href="/services/landscape-lighting"
+          image="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&q=80"
+        />
+        <ServiceCard
+          title="Holiday Lighting"
+          description="Full-service holiday lighting installation so your family can relax and enjoy the season."
+          icon="🎄"
+          href="/services/holiday-lighting"
+          image="https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=600&q=80"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="relative bg-cover bg-center bg-fixed py-20" style="background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=80')">
+    <div class="absolute inset-0 bg-green-dark/80"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="text-white">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-6">About Allen Irrigation</h2>
+        <p class="text-white/90 text-lg mb-4">Founded in 2001 by Nic Allen, a former golf course superintendent, Allen Irrigation Company has grown from a one-man operation to several crews covering central Indiana.</p>
+        <p class="text-white/90 text-lg mb-6">We use only commercial grade Rain Bird products and stand behind every installation with our head-to-head coverage guarantee.</p>
+        <a href="/about" class="btn-primary">Learn More About Us</a>
+      </div>
+      <div class="text-white space-y-6">
+        <div class="flex items-start space-x-4">
+          <span class="text-green-accent text-2xl">✓</span>
+          <div>
+            <h3 class="font-heading font-semibold text-lg">Commercial Grade Products</h3>
+            <p class="text-white/80">Rain Bird commercial products and PVC piping on every installation.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <span class="text-green-accent text-2xl">✓</span>
+          <div>
+            <h3 class="font-heading font-semibold text-lg">Head-to-Head Coverage</h3>
+            <p class="text-white/80">Our coverage guarantee ensures even watering across your entire property.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <span class="text-green-accent text-2xl">✓</span>
+          <div>
+            <h3 class="font-heading font-semibold text-lg">No Surprise Pricing</h3>
+            <p class="text-white/80">In-person meetings and transparent quotes. What we quote is what you pay.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <WhyChooseUs />
+  <Testimonials />
+  <CTABanner />
+</BaseLayout>

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+<BaseLayout title="Holiday Lighting" description="Full-service holiday lighting installation for homes and businesses in central Indiana.">
+  <Hero
+    title="Holiday Lighting"
+    subtitle="Full-service installation so you can enjoy the season"
+    image="https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="section-title">Let Us Handle the Holidays</h2>
+          <p class="text-gray-600 text-lg mb-6">The holiday season should be about spending time with family and friends — not climbing ladders in the cold. Allen Irrigation's full-service holiday lighting takes care of everything.</p>
+          <p class="text-gray-600 text-lg mb-6">From custom design and professional installation to maintenance throughout the season and careful takedown and storage, we handle every detail so you can relax and enjoy the magic of the holidays.</p>
+          <p class="text-gray-600 text-lg">Whether you want a classic warm glow or a show-stopping display, our team will work with you to create the perfect holiday look for your home or business.</p>
+        </div>
+        <div class="bg-cover bg-center rounded-lg h-96" style="background-image: url('https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=800&q=80')"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-title">Our Holiday Lighting Process</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
+        {[
+          { step: '1', title: 'Design', desc: 'We work with you to create a custom lighting plan for your property.' },
+          { step: '2', title: 'Install', desc: 'Our professional crew handles all installation safely and efficiently.' },
+          { step: '3', title: 'Maintain', desc: 'We monitor and maintain your display throughout the holiday season.' },
+          { step: '4', title: 'Remove', desc: 'After the holidays, we carefully take down and store your lights.' },
+        ].map(item => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-green-accent rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-heading font-bold text-xl">{item.step}</span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-green-dark mb-2">{item.title}</h3>
+            <p class="text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Make This Holiday Season Magical" subtitle="Book your holiday lighting installation today — spots fill up fast!" />
+</BaseLayout>

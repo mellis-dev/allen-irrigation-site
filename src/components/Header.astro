@@ -1,0 +1,72 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/contact', label: 'Contact' },
+];
+const currentPath = Astro.url.pathname;
+---
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-green-dark rounded-full flex items-center justify-center">
+          <span class="text-white font-heading font-bold text-xl">AIC</span>
+        </div>
+        <div class="hidden sm:block">
+          <span class="font-heading font-bold text-green-dark text-lg leading-tight block">Allen Irrigation</span>
+          <span class="text-sm text-gray-500 leading-tight block">Company</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class={`font-heading text-sm font-semibold uppercase tracking-wide transition-colors duration-200 ${
+              currentPath === link.href ? 'text-green-accent' : 'text-gray-dark hover:text-green-mid'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a href="/contact" class="btn-primary !py-2 !px-6 !text-sm">Free Quote</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+    <div class="px-4 py-4 space-y-3">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`block font-heading text-sm font-semibold uppercase tracking-wide ${
+            currentPath === link.href ? 'text-green-accent' : 'text-gray-dark'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href="/contact" class="btn-primary !py-2 !px-6 !text-sm block text-center mt-4">Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

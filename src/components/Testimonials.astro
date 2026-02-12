@@ -1,0 +1,25 @@
+---
+const testimonials = [
+  { name: 'Sarah M.', location: 'Mooresville, IN', text: 'Allen Irrigation transformed our yard with a beautiful sprinkler system. Professional from start to finish, and the pricing was exactly what they quoted. No surprises!', rating: 5 },
+  { name: 'David & Lisa K.', location: 'Bargersville, IN', text: 'We\'ve used AIC for both irrigation and landscape lighting. The attention to detail is incredible. Our home looks amazing at night, and the lawn has never been greener.', rating: 5 },
+  { name: 'Mark T.', location: 'Greenwood, IN', text: 'The holiday lighting service was a game changer for our family. They handled everything — installation, takedown, storage. We just enjoyed the season.', rating: 5 },
+  { name: 'Jennifer R.', location: 'Plainfield, IN', text: 'Nic and his team are the real deal. Commercial grade products, honest pricing, and they stand behind their work. Highly recommend to anyone in central Indiana.', rating: 5 },
+];
+const stars = '★★★★★';
+---
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <p class="section-subtitle">Hear from homeowners across central Indiana who trust Allen Irrigation.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {testimonials.map(t => (
+        <div class="bg-white p-8 rounded-lg shadow-md text-left">
+          <div class="text-green-accent text-xl mb-3">{stars}</div>
+          <p class="text-gray-600 italic mb-4">"{t.text}"</p>
+          <div class="font-heading font-semibold text-green-dark">{t.name}</div>
+          <div class="text-sm text-gray-500">{t.location}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
