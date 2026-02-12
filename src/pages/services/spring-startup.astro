@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+<BaseLayout title="Spring Startup Service" description="Professional irrigation spring startup and activation services in central Indiana. Get your sprinkler system ready for the season with Allen Irrigation Company.">
+  <Hero
+    title="Spring Startup Service"
+    subtitle="Wake up your irrigation system the right way"
+    image="https://images.unsplash.com/photo-1462275646964-a0e3c11f18a6?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="section-title">Start the Season Right</h2>
+          <p class="text-gray-600 text-lg mb-6">After a long Indiana winter, your irrigation system needs more than just turning on the water. A proper spring startup ensures everything is functioning correctly, identifies any winter damage, and gets your system dialed in for the growing season ahead.</p>
+          <p class="text-gray-600 text-lg mb-6">Our trained technicians follow a comprehensive checklist to bring your system back online safely and efficiently. We check every zone, inspect every head, test your backflow preventer, and adjust your controller schedule for spring watering needs.</p>
+          <p class="text-gray-600 text-lg">We typically begin scheduling spring startups in <strong class="text-green-dark">late March through April</strong>, once the threat of hard freezes has passed. Spots fill quickly, so we recommend booking early.</p>
+        </div>
+        <div class="bg-cover bg-center rounded-lg h-96" style="background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80')"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title text-center">What's Included in a Spring Startup</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        {[
+          { icon: '💧', title: 'Gradual Water Activation', desc: 'We slowly pressurize your system to prevent water hammer and protect pipes and fittings.' },
+          { icon: '🔍', title: 'Zone-by-Zone Inspection', desc: 'Every zone is run and visually inspected for leaks, broken heads, and coverage issues.' },
+          { icon: '🔧', title: 'Head Adjustment & Cleaning', desc: 'Sprinkler heads are adjusted for proper arc, distance, and alignment. Clogged nozzles are cleaned.' },
+          { icon: '🛡️', title: 'Backflow Preventer Check', desc: 'We verify your backflow device is working properly to protect your drinking water supply.' },
+          { icon: '⏰', title: 'Controller Programming', desc: 'Your timer is programmed with an appropriate spring watering schedule based on your landscape needs.' },
+          { icon: '📝', title: 'Damage Report', desc: 'If we find any winter damage or needed repairs, we provide a detailed report and estimate on the spot.' },
+        ].map(item => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <span class="text-4xl mb-4 block">{item.icon}</span>
+            <h3 class="font-heading font-bold text-lg text-green-dark mb-2">{item.title}</h3>
+            <p class="text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+      <h2 class="section-title">Bundle & Save</h2>
+      <p class="text-gray-600 text-lg mb-6">Many of our customers pair their spring startup with our <a href="/services/winterization" class="text-green-mid hover:text-green-dark underline">fall winterization service</a> for a discounted annual rate. It's the easiest way to ensure your system is professionally maintained year-round.</p>
+      <p class="text-gray-600 text-lg mb-8">Already have an <a href="/services/irrigation" class="text-green-mid hover:text-green-dark underline">irrigation system</a> installed by us? We keep your system details on file, making startups fast and efficient.</p>
+      <a href="/contact" class="btn-primary">Schedule Your Spring Startup</a>
+    </div>
+  </section>
+
+  <CTABanner title="Spring Is Around the Corner" subtitle="Book your irrigation startup now before the schedule fills up." />
+</BaseLayout>

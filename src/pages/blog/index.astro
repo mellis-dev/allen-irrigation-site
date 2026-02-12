@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const posts = [
+  {
+    title: 'The Complete Guide to Lawn Irrigation in Indiana',
+    slug: 'complete-guide-lawn-irrigation-indiana',
+    excerpt: 'Everything you need to know about installing and maintaining an irrigation system in central Indiana, from system types to seasonal care.',
+    image: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&q=80',
+    date: 'February 10, 2026',
+  },
+  {
+    title: 'Smart Irrigation Controllers: Are They Worth It?',
+    slug: 'smart-irrigation-controllers-worth-it',
+    excerpt: 'WiFi-enabled irrigation controllers can save water and money. Learn how smart controllers work and whether upgrading makes sense for your property.',
+    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80',
+    date: 'February 5, 2026',
+  },
+];
+---
+<BaseLayout title="Blog | Irrigation & Lighting Tips" description="Expert tips and guides on irrigation systems, landscape lighting, and outdoor property care from Allen Irrigation Company in central Indiana.">
+  <Hero
+    title="Blog"
+    subtitle="Tips, guides, and insights from the Allen Irrigation team"
+    image="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="h-48 bg-cover bg-center" style={`background-image: url('${post.image}')`}></div>
+            <div class="p-6">
+              <p class="text-sm text-gray-400 mb-2">{post.date}</p>
+              <h2 class="font-heading font-bold text-xl text-green-dark group-hover:text-green-mid transition-colors mb-3">{post.title}</h2>
+              <p class="text-gray-600">{post.excerpt}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

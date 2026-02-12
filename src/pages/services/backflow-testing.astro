@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+<BaseLayout title="Backflow Testing & Certification" description="Licensed backflow testing and certification for irrigation systems in central Indiana. Stay compliant and protect your water supply with Allen Irrigation Company.">
+  <Hero
+    title="Backflow Testing & Certification"
+    subtitle="Protect your drinking water and stay code-compliant"
+    image="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="section-title">What Is Backflow Testing?</h2>
+          <p class="text-gray-600 text-lg mb-6">Your irrigation system connects directly to your home or business's potable water supply. A backflow prevention device ensures that water from your sprinkler system can't flow backward into your drinking water — protecting your family or customers from contaminated water.</p>
+          <p class="text-gray-600 text-lg mb-6">Many Indiana municipalities require annual backflow testing and certification to verify your device is working correctly. Failure to test can result in fines or having your water service shut off.</p>
+          <p class="text-gray-600 text-lg">Allen Irrigation provides professional backflow testing, repair, and replacement services. We handle the testing, paperwork, and submission to your local water utility so you don't have to worry about a thing.</p>
+        </div>
+        <div class="bg-cover bg-center rounded-lg h-96" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80')"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title text-center">Our Backflow Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        {[
+          { icon: '📋', title: 'Annual Testing & Certification', desc: 'We test your backflow preventer using calibrated gauges, complete the required paperwork, and submit results to your water utility.' },
+          { icon: '🔧', title: 'Repair & Rebuilds', desc: 'If your device fails the test, we can repair or rebuild it on the spot in most cases — saving you the cost and hassle of a return visit.' },
+          { icon: '🔄', title: 'Replacement & Installation', desc: 'For devices that are beyond repair or outdated, we install new backflow preventers that meet current Indiana code requirements.' },
+        ].map(item => (
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <span class="text-4xl mb-4 block">{item.icon}</span>
+            <h3 class="font-heading font-bold text-lg text-green-dark mb-2">{item.title}</h3>
+            <p class="text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+      <h2 class="section-title text-center">Frequently Asked Questions</h2>
+      <div class="space-y-6 mt-8">
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="font-heading font-bold text-green-dark mb-2">How often do I need backflow testing?</h3>
+          <p class="text-gray-600">Most Indiana water utilities require annual testing. We recommend scheduling it during your <a href="/services/spring-startup" class="text-green-mid hover:text-green-dark underline">spring startup</a> for convenience.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="font-heading font-bold text-green-dark mb-2">What happens if my backflow device fails?</h3>
+          <p class="text-gray-600">In most cases, we can repair or rebuild the device during the same visit. If a full replacement is needed, we'll provide an estimate and schedule the work promptly.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="font-heading font-bold text-green-dark mb-2">Do I really need a backflow preventer?</h3>
+          <p class="text-gray-600">Yes. Indiana plumbing code requires backflow prevention on all irrigation system connections. Beyond the legal requirement, it's essential for protecting your drinking water from fertilizers, pesticides, and other contaminants.</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/contact" class="btn-primary">Schedule Backflow Testing</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Due for Backflow Testing?" subtitle="Contact us to schedule your annual test and stay compliant." />
+</BaseLayout>

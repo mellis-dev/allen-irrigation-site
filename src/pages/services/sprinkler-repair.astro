@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+<BaseLayout title="Sprinkler Repair & Maintenance" description="Expert sprinkler system repair and maintenance services in central Indiana. Broken heads, leaks, valve issues, and more — Allen Irrigation Company has you covered.">
+  <Hero
+    title="Sprinkler Repair & Maintenance"
+    subtitle="Fast, reliable fixes from irrigation experts"
+    image="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="section-title">Irrigation Repair You Can Trust</h2>
+          <p class="text-gray-600 text-lg mb-6">Even the best irrigation systems need occasional repairs. Lawn mowers clip sprinkler heads, valves wear out over time, and underground leaks can develop without warning. When something goes wrong, you need a team that can diagnose the problem quickly and fix it right the first time.</p>
+          <p class="text-gray-600 text-lg mb-6">At Allen Irrigation, our technicians have years of experience troubleshooting every type of irrigation issue. We work on systems we installed as well as systems installed by other companies — regardless of the brand or age of your equipment.</p>
+          <p class="text-gray-600 text-lg">We stock Rain Bird commercial parts on our trucks so most repairs can be completed in a single visit, getting your system back up and running the same day.</p>
+        </div>
+        <div class="bg-cover bg-center rounded-lg h-96" style="background-image: url('https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80')"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-title">Common Sprinkler Issues We Fix</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        {[
+          { icon: '💥', title: 'Broken Sprinkler Heads', desc: 'Cracked, broken, or missing heads from mower damage, foot traffic, or freeze damage.' },
+          { icon: '💧', title: 'Leaking Pipes & Fittings', desc: 'Underground leaks that cause soggy spots, high water bills, or low pressure in zones.' },
+          { icon: '⚙️', title: 'Valve Problems', desc: 'Zones that won\'t turn on, won\'t shut off, or have weak flow due to faulty valves or solenoids.' },
+          { icon: '📡', title: 'Controller & Wiring Issues', desc: 'Timer malfunctions, bad wiring connections, or zones that won\'t respond to the controller.' },
+          { icon: '🔄', title: 'Poor Coverage & Dry Spots', desc: 'Misaligned heads, wrong nozzles, or design issues causing uneven watering patterns.' },
+          { icon: '🛡️', title: 'Backflow Preventer Repair', desc: 'Leaking or failed backflow devices that need repair or replacement to meet code requirements.' },
+        ].map(item => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <span class="text-4xl mb-4 block">{item.icon}</span>
+            <h3 class="font-heading font-bold text-lg text-green-dark mb-2">{item.title}</h3>
+            <p class="text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+      <h2 class="section-title">Preventive Maintenance Plans</h2>
+      <p class="text-gray-600 text-lg mb-6">The best way to avoid costly repairs is regular maintenance. Our seasonal maintenance visits include head adjustments, leak checks, controller updates, and system performance testing to catch small issues before they become big problems.</p>
+      <p class="text-gray-600 text-lg mb-8">Pair maintenance with our <a href="/services/spring-startup" class="text-green-mid hover:text-green-dark underline">spring startup</a> and <a href="/services/winterization" class="text-green-mid hover:text-green-dark underline">winterization</a> services for complete year-round system care.</p>
+      <a href="/contact" class="btn-primary">Request a Repair Visit</a>
+    </div>
+  </section>
+
+  <CTABanner title="Sprinkler Problems?" subtitle="Call us today for fast, professional irrigation repair service." />
+</BaseLayout>

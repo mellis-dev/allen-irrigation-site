@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+<BaseLayout title="Snow Removal Services" description="Professional snow removal services for residential and commercial properties in Mooresville and central Indiana. Reliable, fast response from Allen Irrigation Company.">
+  <Hero
+    title="Snow Removal Services"
+    subtitle="Keep your property safe and accessible all winter long"
+    image="https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="section-title">Reliable Snow Removal for Central Indiana</h2>
+          <p class="text-gray-600 text-lg mb-6">Indiana winters are unpredictable, but your property's safety shouldn't be. Allen Irrigation Company provides dependable snow removal services for both residential and commercial properties throughout the Mooresville and central Indiana area.</p>
+          <p class="text-gray-600 text-lg mb-6">As a full-service outdoor property company, we understand your landscape inside and out. That means we know exactly where your irrigation heads, lighting fixtures, and landscaping features are — so we can clear snow efficiently without damaging your investment.</p>
+          <p class="text-gray-600 text-lg">Our crews are on standby throughout the winter season, ready to respond quickly when snow hits. We offer both per-event and seasonal contract options to fit your needs and budget.</p>
+        </div>
+        <div class="bg-cover bg-center rounded-lg h-96" style="background-image: url('https://images.unsplash.com/photo-1610994839883-41a0af3b2e32?w=800&q=80')"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-title">Our Snow Removal Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        {[
+          { icon: '🚜', title: 'Driveway & Parking Lot Plowing', desc: 'Fast, thorough plowing for residential driveways and commercial parking areas of any size.' },
+          { icon: '🧹', title: 'Sidewalk & Walkway Clearing', desc: 'Keep walkways safe and ADA-compliant with prompt shoveling and clearing services.' },
+          { icon: '🧂', title: 'Salt & De-Icing Treatment', desc: 'Professional salt application and de-icing to prevent dangerous ice buildup on surfaces.' },
+          { icon: '📋', title: 'Seasonal Contracts', desc: 'Lock in reliable service all winter with a seasonal contract at a predictable monthly rate.' },
+          { icon: '⚡', title: 'Per-Event Service', desc: 'Pay only when it snows. We respond quickly to each storm event with professional clearing.' },
+          { icon: '🏢', title: 'Commercial Properties', desc: 'HOAs, retail centers, office parks, and commercial facilities — we handle properties of all sizes.' },
+        ].map(item => (
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <span class="text-4xl mb-4 block">{item.icon}</span>
+            <h3 class="font-heading font-bold text-lg text-green-dark mb-2">{item.title}</h3>
+            <p class="text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="bg-cover bg-center rounded-lg h-96" style="background-image: url('https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=800&q=80')"></div>
+        <div>
+          <h2 class="section-title">Why Choose Allen Irrigation for Snow Removal?</h2>
+          <ul class="space-y-4 text-gray-600 text-lg">
+            <li class="flex items-start space-x-3">
+              <span class="text-green-accent text-xl mt-1">✓</span>
+              <span><strong class="text-green-dark">We Know Your Property</strong> — As your irrigation and lighting provider, we already know the layout of your yard and where to be careful.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-accent text-xl mt-1">✓</span>
+              <span><strong class="text-green-dark">Year-Round Relationship</strong> — One company for irrigation, lighting, and snow removal means seamless service all four seasons.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-accent text-xl mt-1">✓</span>
+              <span><strong class="text-green-dark">Fast Response Times</strong> — Our local Mooresville crews are close by and ready to respond when storms hit central Indiana.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <span class="text-green-accent text-xl mt-1">✓</span>
+              <span><strong class="text-green-dark">Trusted Since 2001</strong> — Over two decades of serving central Indiana properties with professionalism and care.</span>
+            </li>
+          </ul>
+          <div class="mt-8">
+            <a href="/contact" class="btn-primary">Get a Snow Removal Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Ready for a Worry-Free Winter?" subtitle="Contact us today to set up snow removal service for your property." />
+</BaseLayout>

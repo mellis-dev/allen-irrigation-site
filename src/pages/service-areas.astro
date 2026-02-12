@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const serviceAreas = [
+  { name: 'Mooresville', desc: 'Our home base. We\'re proud to be Mooresville\'s trusted irrigation and lighting company since 2001.' },
+  { name: 'Indianapolis', desc: 'Serving the greater Indianapolis metro area with professional irrigation installation and service.' },
+  { name: 'Greenwood', desc: 'Residential and commercial irrigation, lighting, and snow removal services throughout Greenwood.' },
+  { name: 'Plainfield', desc: 'Full-service irrigation and outdoor lighting for Plainfield homes and businesses.' },
+  { name: 'Brownsburg', desc: 'Expert sprinkler system installation and maintenance for the Brownsburg community.' },
+  { name: 'Avon', desc: 'Professional irrigation and landscape lighting services for Avon area properties.' },
+  { name: 'Martinsville', desc: 'Serving our Morgan County neighbors with quality irrigation and lighting solutions.' },
+  { name: 'Camby', desc: 'Trusted irrigation services for residential and commercial properties in Camby.' },
+  { name: 'Bargersville', desc: 'Growing community, growing lawns. Full irrigation services for Bargersville.' },
+  { name: 'Whiteland', desc: 'Professional sprinkler and landscape lighting installation in the Whiteland area.' },
+  { name: 'Franklin', desc: 'Irrigation installation, repair, and seasonal services for Franklin properties.' },
+  { name: 'Zionsville', desc: 'Premium irrigation and landscape lighting services for Zionsville homes and estates.' },
+];
+---
+<BaseLayout title="Service Areas" description="Allen Irrigation Company serves Mooresville, Indianapolis, Greenwood, Plainfield, Brownsburg, Avon, and communities throughout central Indiana with irrigation, lighting, and snow removal services.">
+  <Hero
+    title="Areas We Serve"
+    subtitle="Proudly serving central Indiana since 2001"
+    image="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="section-title">Central Indiana's Irrigation & Lighting Experts</h2>
+        <p class="text-gray-600 text-lg">Based in Mooresville, Allen Irrigation Company provides <a href="/services/irrigation" class="text-green-mid hover:text-green-dark underline">irrigation installation</a>, <a href="/services/sprinkler-repair" class="text-green-mid hover:text-green-dark underline">sprinkler repair</a>, <a href="/services/landscape-lighting" class="text-green-mid hover:text-green-dark underline">landscape lighting</a>, <a href="/services/holiday-lighting" class="text-green-mid hover:text-green-dark underline">holiday lighting</a>, and <a href="/services/snow-removal" class="text-green-mid hover:text-green-dark underline">snow removal</a> services to communities throughout central Indiana. Our crews travel throughout the region daily, ensuring fast response times and local expertise.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {serviceAreas.map(area => (
+          <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <h3 class="font-heading font-bold text-lg text-green-dark mb-2">📍 {area.name}, Indiana</h3>
+            <p class="text-gray-600">{area.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+      <h2 class="section-title">Don't See Your Area?</h2>
+      <p class="text-gray-600 text-lg mb-6">We regularly serve communities beyond this list throughout central Indiana, including parts of Morgan, Johnson, Hendricks, Marion, Hamilton, and Boone counties. If you're within roughly 30 miles of Mooresville, there's a good chance we can help.</p>
+      <p class="text-gray-600 text-lg mb-8">Give us a call or <a href="/contact" class="text-green-mid hover:text-green-dark underline">send us a message</a> to find out if we service your area.</p>
+      <a href="/contact" class="btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title text-center">Our Services</h2>
+      <p class="text-gray-600 text-lg text-center mb-12">All of these services are available throughout our central Indiana service area:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { title: 'Irrigation Installation', href: '/services/irrigation', desc: 'New sprinkler system design and installation using Rain Bird commercial products.' },
+          { title: 'Sprinkler Repair', href: '/services/sprinkler-repair', desc: 'Expert diagnosis and repair for all brands and ages of irrigation systems.' },
+          { title: 'Spring Startup', href: '/services/spring-startup', desc: 'Professional system activation and inspection each spring.' },
+          { title: 'Winterization', href: '/services/winterization', desc: 'Compressed air blowout to protect your system from freeze damage.' },
+          { title: 'Landscape Lighting', href: '/services/landscape-lighting', desc: 'Beautiful, energy-efficient outdoor lighting design and installation.' },
+          { title: 'Holiday Lighting', href: '/services/holiday-lighting', desc: 'Full-service holiday light installation, maintenance, and removal.' },
+        ].map(service => (
+          <a href={service.href} class="block bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h3 class="font-heading font-bold text-green-dark mb-2">{service.title}</h3>
+            <p class="text-gray-600 text-sm">{service.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Ready to Get Started?" subtitle="Contact us for a free consultation at your central Indiana property." />
+</BaseLayout>

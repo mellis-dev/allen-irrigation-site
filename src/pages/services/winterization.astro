@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+<BaseLayout title="Sprinkler Winterization" description="Protect your irrigation system from freeze damage with professional sprinkler winterization and blowout services in central Indiana from Allen Irrigation Company.">
+  <Hero
+    title="Sprinkler Winterization"
+    subtitle="Protect your investment before the first freeze"
+    image="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=1920&q=80"
+    compact
+  />
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="section-title">Why Winterization Matters</h2>
+          <p class="text-gray-600 text-lg mb-6">Central Indiana temperatures regularly dip well below freezing from November through March. Water left sitting in your irrigation pipes, valves, and sprinkler heads can freeze, expand, and crack even the most durable components.</p>
+          <p class="text-gray-600 text-lg mb-6">A professional winterization — also called a sprinkler blowout — uses compressed air to force every drop of water out of your system. This simple fall service can save you hundreds or even thousands of dollars in spring repair costs.</p>
+          <p class="text-gray-600 text-lg">At Allen Irrigation, we use commercial-grade air compressors and follow a systematic zone-by-zone process to ensure your entire system is thoroughly cleared and protected.</p>
+        </div>
+        <div class="bg-cover bg-center rounded-lg h-96" style="background-image: url('https://images.unsplash.com/photo-1457269449834-928af64c684d?w=800&q=80')"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title text-center">Our Winterization Process</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+        {[
+          { step: '1', title: 'System Shutdown', desc: 'We shut off the water supply to your irrigation system and turn off the controller.' },
+          { step: '2', title: 'Compressed Air Blowout', desc: 'Using commercial-grade compressors, we blow compressed air through each zone individually.' },
+          { step: '3', title: 'Valve & Head Inspection', desc: 'We inspect all valves, heads, and connections for any issues that should be addressed before spring.' },
+          { step: '4', title: 'Controller Programming', desc: 'We set your controller to rain mode or off to prevent any accidental winter activation.' },
+        ].map(item => (
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <div class="w-12 h-12 bg-green-dark rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-heading font-bold text-lg">{item.step}</span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-green-dark mb-2">{item.title}</h3>
+            <p class="text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+      <h2 class="section-title text-center">When Should You Winterize?</h2>
+      <p class="text-gray-600 text-lg mb-6 text-center">In central Indiana, we recommend scheduling your winterization between <strong class="text-green-dark">mid-October and mid-November</strong>, before the first hard freeze. Appointments fill up fast during this window, so we encourage booking early.</p>
+      <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-lg">
+        <h3 class="font-heading font-bold text-lg text-amber-800 mb-2">⚠️ Don't Wait Too Long</h3>
+        <p class="text-amber-700">If temperatures drop below 32°F with water still in your system, you risk cracked pipes, broken valves, and damaged sprinkler heads. Repairs from freeze damage typically cost 5 to 10 times more than a simple winterization service.</p>
+      </div>
+      <div class="mt-8 text-center">
+        <p class="text-gray-600 text-lg mb-4">Already a spring startup customer? Ask about bundling winterization and <a href="/services/spring-startup" class="text-green-mid hover:text-green-dark underline">spring startup</a> for a discounted rate.</p>
+        <a href="/contact" class="btn-primary">Schedule Your Winterization</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Don't Let Winter Damage Your System" subtitle="Schedule your sprinkler winterization today and protect your investment." />
+</BaseLayout>
